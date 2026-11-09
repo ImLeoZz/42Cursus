@@ -1,0 +1,27 @@
+NAME = libft.a
+
+SRC = ft_isalpha.c ft_isalnum.c ft_isascii.c ft_isdigit.c \
+			ft_isprint.c ft_strlen.c
+
+OBJS = ${SRC:.c=.o}
+
+CC = cc
+CFLAGS = -Wall -Wextra -Werror 
+
+all: $(NAME)
+
+$(NAME): $(OBJS)
+	ar rc $@ $^ 
+
+%.o: %.c
+	$(CC) -c $(CFLAGS) $< -o $@
+
+clean:
+	rm -f $(OBJS)
+
+fclean: clean
+	rm -f $(NAME)
+
+re: fclean all
+
+.PHONY: all clean fclean re
