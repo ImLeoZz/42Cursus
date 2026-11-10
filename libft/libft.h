@@ -6,7 +6,7 @@
 /*   By: lemille <lemille@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/09 14:35:28 by lemille           #+#    #+#             */
-/*   Updated: 2026/11/10 11:27:18 by lemille          ###   ########lyon.fr   */
+/*   Updated: 2026/11/10 11:49:47 by lemille          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 # include <stddef.h>
 
 size_t	ft_strlen(const char *s);
+void	*ft_memcpy(void *dest, const void *src, size_t n);
 void	*ft_memset(void *s, int c, size_t n);
 void	ft_bzero(void *s, size_t n);
 int		ft_isascii(int c);
