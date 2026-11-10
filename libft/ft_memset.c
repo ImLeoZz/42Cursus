@@ -6,11 +6,11 @@
 /*   By: lemille <lemille@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/09 15:38:29 by lemille           #+#    #+#             */
-/*   Updated: 2026/11/10 10:58:52 by lemille          ###   ########lyon.fr   */
+/*   Updated: 2026/11/10 11:26:44 by lemille          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 void	*ft_memset(void *s, int c, size_t n)
 {
