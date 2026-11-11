@@ -6,8 +6,13 @@
 /*   By: lemille <lemille@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/11 14:38:56 by lemille           #+#    #+#             */
-/*   Updated: 2026/11/11 14:38:57 by lemille          ###   ########lyon.fr   */
+/*   Updated: 2026/11/11 17:43:09 by lemille          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-
+int	ft_toupper(int c)
+{
+	if (c >= 'a' && c <= 'z')
+		c -= 'a' - 'A';
+	return (c);
+}

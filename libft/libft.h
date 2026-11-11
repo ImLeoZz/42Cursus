@@ -6,7 +6,7 @@
 /*   By: lemille <lemille@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/11 14:40:28 by lemille           #+#    #+#             */
-/*   Updated: 2026/11/11 14:40:42 by lemille          ###   ########lyon.fr   */
+/*   Updated: 2026/11/11 17:58:54 by lemille          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t n);
 void	*ft_memset(void *s, int c, size_t n);
 void	*ft_memmove(void *dest, const void *src, size_t n);
 void	ft_bzero(void *s, size_t n);
+char	*ft_strchr(const char *s, int c);
 int		ft_isascii(int c);
 int		ft_isprint(int c);
 int		ft_isdigit(int c);
