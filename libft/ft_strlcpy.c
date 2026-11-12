@@ -6,7 +6,7 @@
 /*   By: lemille <lemille@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/10 15:44:35 by lemille           #+#    #+#             */
-/*   Updated: 2026/11/10 15:57:01 by lemille          ###   ########lyon.fr   */
+/*   Updated: 2026/11/12 12:33:02 by lemille          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 
 	k = 0;
 	len = ft_strlen(src);
+	if (size == 0)
+		return (len);
 	while (k < size - 1 && *src)
 	{
 		*dest++ = *src++;
