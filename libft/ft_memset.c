@@ -6,7 +6,7 @@
 /*   By: lemille <lemille@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/09 15:38:29 by lemille           #+#    #+#             */
-/*   Updated: 2026/11/10 11:26:44 by lemille          ###   ########lyon.fr   */
+/*   Updated: 2026/11/12 15:46:47 by lemille          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,14 @@
 void	*ft_memset(void *s, int c, size_t n)
 {
 	unsigned char	*p;
-	size_t			k;
 
-	k = 0;
+	if (!s)
+		return (NULL);
 	p = (unsigned char *)s;
-	while (k < n)
+	while (n--)
 	{
 		*p = (unsigned char)c;
 		p++;
-		k++;
 	}
 	return (s);
 }
