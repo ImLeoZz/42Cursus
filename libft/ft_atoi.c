@@ -6,7 +6,7 @@
 /*   By: lemille <lemille@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/12 10:53:16 by lemille           #+#    #+#             */
-/*   Updated: 2026/11/12 11:53:11 by lemille          ###   ########lyon.fr   */
+/*   Updated: 2026/11/12 11:56:24 by lemille          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	ft_atoi(const char *nptr)
 	k = 0;
 	sign = 1;
 	result = 0;
-	while (nptr[k] == ' ' || (nptr[k] >= 7 && nptr[k] <= 32))
+	while (nptr[k] == ' ' || (nptr[k] >= 9 && nptr[k] <= 13))
 		k++;
 	if (nptr[k] == '+' || nptr[k] == '-')
 	{
