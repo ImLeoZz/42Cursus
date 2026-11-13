@@ -6,7 +6,7 @@
 /*   By: lemille <lemille@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/12 13:34:54 by lemille           #+#    #+#             */
-/*   Updated: 2026/11/12 14:33:35 by lemille          ###   ########lyon.fr   */
+/*   Updated: 2026/11/12 17:50:05 by lemille          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*dest;
 	size_t	s_len;
 	size_t	size;
-	size_t	k;
 
-	k = 0;
 	s_len = ft_strlen(s);
 	if (s_len <= start)
 	{
