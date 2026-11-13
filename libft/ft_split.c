@@ -6,21 +6,22 @@
 /*   By: lemille <lemille@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/13 12:20:08 by lemille           #+#    #+#             */
-/*   Updated: 2026/11/13 15:47:01 by lemille          ###   ########lyon.fr   */
+/*   Updated: 2026/11/13 17:58:28 by lemille          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-static void	ft_cleanfree(char **dest)
+static int	ft_cleanfree(char **dest, size_t l)
 {
-	size_t	l;
+	size_t	k;
 
-	l = 0;
-	while (dest[l])
-		free(dest[l++]);
+	k = 0;
+	while (k < l)
+		free(dest[k++]);
 	free(dest);
+	return (0);
 }
 
 static int	ft_putword(char **dest, char const *s, char c)
@@ -42,7 +43,7 @@ static int	ft_putword(char **dest, char const *s, char c)
 		len = k - d;
 		dest[l] = malloc(len + 1);
 		if (!dest[l])
-			return (0);
+			return (ft_cleanfree(dest, l));
 		ft_strlcpy(dest[l++], &s[d], (len + 1));
 		while (s[k] == c && s[k])
 			k++;
@@ -73,15 +74,13 @@ static size_t	ft_countword(char const *s, char c)
 char	**ft_split(char const *s, char c)
 {
 	char	**dest;
-	int		b;
 
 	if (s == NULL)
 		return (NULL);
 	dest = malloc(sizeof(char *) * (ft_countword(s, c) + 1));
 	if (!dest)
 		return (NULL);
-	b = ft_putword(dest, s, c);
-	if (!b)
-		ft_cleanfree(dest);
+	if (!ft_putword(dest, s, c))
+		return (NULL);
 	return (dest);
 }
