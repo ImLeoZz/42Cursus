@@ -6,7 +6,7 @@
 /*   By: lemille <lemille@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/13 12:20:08 by lemille           #+#    #+#             */
-/*   Updated: 2026/11/13 17:58:28 by lemille          ###   ########lyon.fr   */
+/*   Updated: 2026/11/16 19:43:06 by lemille          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static int	ft_putword(char **dest, char const *s, char c)
 
 	k = 0;
 	l = 0;
-	while (s[k] == c)
+	while (s[k] == c && s[k])
 		k++;
 	while (s[k])
 	{
