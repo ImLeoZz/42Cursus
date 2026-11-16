@@ -6,7 +6,7 @@
 /*   By: lemille <lemille@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/11 14:40:28 by lemille           #+#    #+#             */
-/*   Updated: 2026/11/13 19:56:15 by lemille          ###   ########lyon.fr   */
+/*   Updated: 2026/11/16 16:03:54 by lemille          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n);
 void	*ft_memchr(const void *s, int c, size_t n);
 void	*ft_calloc(size_t nmemb, size_t size);
 void	*ft_memset(void *s, int c, size_t n);
+void	ft_putstr_fd(char *s, int fd);
+void	ft_putchar_fd(char c, int fd);
 void	ft_bzero(void *s, size_t n);
 char	**ft_split(char const *s, char c);
 char	*ft_itoa(int n);
