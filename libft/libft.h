@@ -6,7 +6,7 @@
 /*   By: lemille <lemille@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/11 14:40:28 by lemille           #+#    #+#             */
-/*   Updated: 2026/11/17 19:41:21 by lemille          ###   ########lyon.fr   */
+/*   Updated: 2026/11/17 19:49:15 by lemille          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ typedef struct s_list
 }	t_list;
 
 unsigned int	ft_lstsize(t_list *lst);
+t_list			*ft_lstmap(t_list *lst, void *(*f)(void *),
+					void (*del)(void *));
 t_list			*ft_lstnew(void *content);
 t_list			*ft_lstlast(t_list *lst);
 size_t			ft_strlcpy(char *dest, const char *src, size_t size);
