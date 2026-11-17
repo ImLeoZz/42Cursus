@@ -6,12 +6,13 @@
 /*   By: lemille <lemille@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/11 14:40:28 by lemille           #+#    #+#             */
-/*   Updated: 2026/11/17 14:14:47 by lemille          ###   ########lyon.fr   */
+/*   Updated: 2026/11/17 16:27:10 by lemille          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+
 # include <stddef.h>
 
 typedef struct s_list
@@ -29,8 +30,11 @@ size_t			ft_strlen(const char *s);
 void			ft_striteri(char *s, void (*f)(unsigned int, char*));
 void			*ft_memmove(void *dest, const void *src, size_t n);
 void			*ft_memcpy(void *dest, const void *src, size_t n);
+void			ft_lstdelone(t_list *lst, void (*del)(void*));
 void			ft_lstadd_front(t_list **lst, t_list *new);
+void			ft_lstclear(t_list **lst, void (*del)(void*));
 void			*ft_memchr(const void *s, int c, size_t n);
+void			ft_lstadd_back(t_list **lst, t_list *new);
 void			*ft_calloc(size_t nmemb, size_t size);
 void			*ft_memset(void *s, int c, size_t n);
 void			ft_putendl_fd(char *s, int fd);
