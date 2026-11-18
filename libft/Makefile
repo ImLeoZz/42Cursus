@@ -19,7 +19,7 @@ CFLAGS = -Wall -Wextra -Werror
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	ar rc $@ $^ 
+	ar rcs $@ $^ 
 
 %.o: %.c libft.h Makefile
 	$(CC) -c $(CFLAGS) $< -o $@
