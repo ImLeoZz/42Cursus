@@ -4,6 +4,7 @@ SRC = ft_printf.c
 INCLUDES = includes
 
 PRE = ./srcs/
+LIBFT = libft
 
 SRCS = ${addprefix ${PRE}, ${SRC}}
 OBJS = ${SRCS:.c=.o}
