@@ -6,7 +6,7 @@
 /*   By: lemille <lemille@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/12 12:35:15 by lemille           #+#    #+#             */
-/*   Updated: 2026/11/12 13:01:31 by lemille          ###   ########lyon.fr   */
+/*   Updated: 2026/11/18 16:25:28 by lemille          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*dest;
 
-	if (size != 0 && nmemb > (size_t)-1 / size)
+	if (size != 0 && nmemb > (size_t) - 1 / size)
 		return (NULL);
 	if (size * nmemb == 0)
 		return (malloc(1));
