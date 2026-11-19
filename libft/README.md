@@ -1,41 +1,87 @@
 *This project has been created as part of the 42 curriculum by lemille.*
 
+# libft
+
 ## Description
-The goal of this project is to create our own libc, which we can reuse
-as needed in our future C projects. It contains the basic functions needed
-for writing fluid, idiomatic code. It consists of a libft.H header file
-and an ft_*.c file for each function required by the assignment and a Makefile.
 
-Here is the project's directory structure :
+libft is a custom C library that reimplements a selection of standard libc
+functions, plus additional utility functions (string, memory, output and
+linked list handling). The goal is to understand how these functions work
+internally, and to build a reusable toolbox for future C projects.
+
+The library is compiled into `libft.a` using `ar`. Helper functions used to
+split complex functions are declared `static` to restrict their scope to
+their file.
+
+### Library content
+
+- **Character checks / conversion**: `ft_isalpha`, `ft_isdigit`, `ft_isalnum`,
+  `ft_isascii`, `ft_isprint`, `ft_toupper`, `ft_tolower`
+- **Memory**: `ft_memset`, `ft_bzero`, `ft_memcpy`, `ft_memmove`,
+  `ft_memchr`, `ft_memcmp`, `ft_calloc`
+- **Strings**: `ft_strlen`, `ft_strlcpy`, `ft_strlcat`, `ft_strchr`,
+  `ft_strrchr`, `ft_strncmp`, `ft_strnstr`, `ft_strdup`, `ft_atoi`
+- **Additional functions**: `ft_substr`, `ft_strjoin`, `ft_strtrim`,
+  `ft_split`, `ft_itoa`, `ft_strmapi`, `ft_striteri`
+- **File descriptor output**: `ft_putchar_fd`, `ft_putstr_fd`,
+  `ft_putendl_fd`, `ft_putnbr_fd`
+- **Linked lists**: `ft_lstnew`, `ft_lstadd_front`, `ft_lstsize`,
+  `ft_lstlast`, `ft_lstadd_back`, `ft_lstdelone`, `ft_lstclear`,
+  `ft_lstiter`, `ft_lstmap`
+
+### Project structure
+
+```
 .
-├──libft.h
-├──Makefile
-├──README.md
-├──ft_isalpha.c
-├──ft_memset.c
-├──ft_memset.c
-├──...
-
+├── libft.h
+├── Makefile
+├── README.md
+├── ft_isalpha.c
+├── ft_memset.c
+└── ...
+```
 
 ## Instructions
-To create the required libft.a, you must use the rules defined in the Makefile :
-		- make : to compile all .c files, including header files.
-		- make re: to recompile everything.
-		- make clean: to delete all .o files
-		- make fclean: to delete the .o and .a files
 
-Each function has its own dependencies, and they are all linked to headers that
-enable synergy between them. The helper functions, meanwhile, are declared as
-static to avoid any import issues.
+### Compilation
 
+The Makefile compiles every source file with `cc -Wall -Wextra -Werror`
+and builds `libft.a` at the root of the repository.
+
+| Command      | Effect                                          |
+|--------------|-------------------------------------------------|
+| `make`       | Compile the mandatory functions into `libft.a`  |
+| `make clean` | Delete the `.o` files                           |
+| `make fclean`| Delete the `.o` files and `libft.a`             |
+| `make re`    | Full rebuild (`fclean` then `all`)              |
+
+### Usage
+
+Include the header in your code:
+
+```c
+#include "libft.h"
+```
+
+Then compile and link against the library for user:
+
+```sh
+cc -Wall -Wextra -Werror main.c -L. -lft -o my_program
+```
 
 ## Resources
-my use of AI:
 
-I don’t just use IA for research and explanations; I also ask it to summarize
-manuals for me, find manuals for me, and explain certain concepts that I didn’t
-understand when talking with my classmates or that I wanted to explore
-further—such as chained lists or the differences between signed and unsigned
-types. In short, I use AI for educational and research purposes.
-My code is entirely my own. He only gave me questions to guide me if I ever
-find myself using it on functions where I feel lost.
+### References
+
+- The functions I used: strlcat, memmove, split, memset, lst*...
+
+### Use of AI
+
+AI was used for educational and research purposes only:
+
+- searching for and summarizing manuals;
+- explaining concepts I did not understand (linked lists, signed vs.
+  unsigned types);
+- guiding my debugging with questions and hints.
+
+All the code was written by me. AI did not write any part of the project.
