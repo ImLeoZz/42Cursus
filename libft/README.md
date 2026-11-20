@@ -50,10 +50,10 @@ and builds `libft.a` at the root of the repository.
 
 | Command      | Effect                                          |
 |--------------|-------------------------------------------------|
-| `make`       | Compile the mandatory functions into `libft.a`  |
-| `make clean` | Delete the `.o` files                           |
-| `make fclean`| Delete the `.o` files and `libft.a`             |
-| `make re`    | Full rebuild (`fclean` then `all`)              |
+| `make`         | Compile the mandatory functions into `libft.a`    |
+| `make clean`   | Delete the `.o` files                             |
+| `make fclean`  | Delete the `.o` files and `libft.a`                 |
+| `make re`      | Full rebuild (`fclean` then `all`)                  |
 
 ### Usage
 
@@ -63,17 +63,21 @@ Include the header in your code:
 #include "libft.h"
 ```
 
-Then compile and link against the library for user:
+Then compile your program and link it against the library:
 
 ```sh
-cc -Wall -Wextra -Werror main.c -L. -lft -o my_program
+make
+cc -Wall -Wextra -Werror main.c libft.a -o my_program
 ```
 
 ## Resources
 
 ### References
 
-- The functions I used: strlcat, memmove, split, memset, lst*...
+- `man 3 memset`, `man 3 memmove`, `man 3 strlcpy`, `man 3 strlcat`,
+  `man 3 calloc`, ... : reference behaviour of the standard functions.- 
+- Linked lists course (PDF), Liste Chainee / universite de batna / univ.batna : used to understand
+  node structure, insertion and traversal.
 
 ### Use of AI
 
