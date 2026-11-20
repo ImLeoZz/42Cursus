@@ -1,6 +1,6 @@
 NAME = libftprintf.a
 
-SRC = ft_printf.c
+SRC = ft_printf.c ft_print_c.c
 INCLUDES = includes
 
 PRE = ./srcs/
@@ -22,7 +22,7 @@ $(NAME): $(LIBFT) $(OBJS)
 $(LIBFT):
 	$(MAKE) -C $(LIBFT_DIR)
 
-%.o: %.c Makefile $(INCLUDES)ft_printf.h
+%.o: %.c Makefile $(INCLUDES)/ft_printf.h
 	$(CC) -c $(CFLAGS) $< -o $@
 
 clean:
