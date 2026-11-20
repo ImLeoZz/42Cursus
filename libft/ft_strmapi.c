@@ -6,7 +6,7 @@
 /*   By: lemille <lemille@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/16 12:07:31 by lemille           #+#    #+#             */
-/*   Updated: 2026/11/16 12:26:51 by lemille          ###   ########lyon.fr   */
+/*   Updated: 2026/11/20 08:58:28 by lemille          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,14 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	if (!ft_strlen(s))
 	{
 		dest = malloc(1);
+		if (!dest)
+			return (NULL);
 		dest[k] = '\0';
 		return (dest);
 	}
 	dest = malloc(len + 1);
+	if (!dest)
+		return (NULL);
 	while (k < len)
 	{
 		dest[k] = f(k, s[k]);

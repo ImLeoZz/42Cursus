@@ -6,7 +6,7 @@
 /*   By: lemille <lemille@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/11 14:39:42 by lemille           #+#    #+#             */
-/*   Updated: 2026/11/11 14:39:45 by lemille          ###   ########lyon.fr   */
+/*   Updated: 2026/11/20 09:24:58 by lemille          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,13 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 
 	k = 0;
 	l = 0;
-	dst_len = ft_strlen(dst);
-	if ((dst_len >= size))
-		return (size + ft_strlen(src));
-	while (dst[k])
+	if (size == 0)
+		return (ft_strlen(src));
+	while (dst[k] && k < size)
 		k++;
+	dst_len = k;
+	if (dst_len == size)
+		return (size + ft_strlen(src));
 	while (k < (size - 1) && src[l])
 		dst[k++] = src[l++];
 	dst[k] = '\0';

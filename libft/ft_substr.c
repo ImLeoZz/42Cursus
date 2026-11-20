@@ -6,7 +6,7 @@
 /*   By: lemille <lemille@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/12 13:34:54 by lemille           #+#    #+#             */
-/*   Updated: 2026/11/12 17:50:05 by lemille          ###   ########.fr       */
+/*   Updated: 2026/11/20 08:59:04 by lemille          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (s_len <= start)
 	{
 		dest = malloc(1);
+		if (!dest)
+			return (NULL);
 		dest[0] = '\0';
 		return (dest);
 	}
